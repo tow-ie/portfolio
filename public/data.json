@@ -57,11 +57,10 @@
   "projects": [
     {
       "id": "1",
-      "title": "Makers Tracker",
-      "description": "A project goal tracking tool for professionals. It let's you create project, assign goals and generate analytics to track progress",
-      "technologies": ["Typescript", "Next.js", "TailwindCSS", "MySQL"],
-      "live_url": "https://makerstracker.com",
-      "code_repo_url": "https://makerstracker.com",
+      "title": "Teyvat Ordering System",
+      "description": "A kiosk-style ordering system featuring all dishes inspired from Genshin Impact.",
+      "technologies": ["Typescript", "Angular.js"],
+      "code_repo_url": "https://teyvat-order-system.vercel.app/",
       "cover": "/assets/project_1.jpeg"
     },
     {
