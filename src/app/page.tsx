@@ -44,9 +44,12 @@ export default async function Home() {
           </div>
           <div className="w-full lg:w-2/3 space-y-4">
             <div className="space-y-2">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tighter ">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tighter">
                 Hey 👋, I&apos;m {data.personalInfo.name}
               </h1>
+              <h2 className="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-400">
+                {data.personalInfo.title}
+              </h2>
             </div>
             <p className="max-w-[600px] lg:text-lg text-gray-500 dark:text-gray-400">
               {data.personalInfo.bio}
@@ -70,7 +73,6 @@ export default async function Home() {
                   <TwitterLogoIcon className="h-4 w-4" />
                 </Button>
               </Link>
-
               <Link
                 target="_blank"
                 href={data.contactInfo.linkedin}
@@ -80,7 +82,6 @@ export default async function Home() {
                   <LinkedInLogoIcon className="h-4 w-4" />
                 </Button>
               </Link>
-
               <Link href={`mailto:${data.contactInfo.email}`}>
                 <Button variant="secondary" size="icon">
                   <EnvelopeClosedIcon className="h-4 w-4" />
@@ -96,14 +97,11 @@ export default async function Home() {
         id="experience"
         className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
       >
-        <h2 className="font-bold text-3xl md:text-5xl mb-12">
-          Work Experience
-        </h2>
+        <h2 className="font-bold text-3xl md:text-5xl mb-12">Work Experience</h2>
         <div className="relative pl-6 after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-gray-500/20 dark:after:bg-gray-400/20 grid gap-10">
           {data.workExperience.map((exp) => (
             <div key={exp.id} className="grid gap-1 relative">
               <div className="aspect-square w-3 bg-gray-900 rounded-full absolute left-0 translate-x-[-29.5px] z-10 top-2 dark:bg-gray-50" />
-
               <h4 className="text-xl font-medium">
                 {exp.role} @
                 <Link
@@ -142,13 +140,12 @@ export default async function Home() {
               <div className="w-full lg:w-1/3 p-2 flex items-center">
                 <Image
                   src={project.cover}
-                  alt="Project 1"
+                  alt={project.title}
                   height={200}
                   width={300}
                   className="rounded-md object-cover"
                 />
               </div>
-
               <div className="w-full lg:w-2/3">
                 <CardHeader>
                   <CardTitle>{project.title}</CardTitle>
@@ -165,16 +162,18 @@ export default async function Home() {
                 </CardContent>
                 <CardFooter>
                   <div className="flex space-x-3">
-                    <Link
-                      target="_blank"
-                      href={project.live_url}
-                      prefetch={false}
-                    >
-                      <Button size="sm">
-                        <GlobeIcon className="h-3 w-3 mr-2" />
-                        Live Demo
-                      </Button>
-                    </Link>
+                    {project.live_url && (
+                      <Link
+                        target="_blank"
+                        href={project.live_url}
+                        prefetch={false}
+                      >
+                        <Button size="sm">
+                          <GlobeIcon className="h-3 w-3 mr-2" />
+                          Live Demo
+                        </Button>
+                      </Link>
+                    )}
                     <Link
                       target="_blank"
                       href={project.code_repo_url}
@@ -203,7 +202,6 @@ export default async function Home() {
           {data.education.map((ed) => (
             <div key={ed.id} className="grid gap-1 relative">
               <div className="aspect-square w-3 bg-gray-900 rounded-full absolute left-0 translate-x-[-29.5px] z-10 top-2 dark:bg-gray-50" />
-
               <h4 className="text-xl font-medium">{ed.degree}</h4>
               <h5 className="font-medium">{ed.institution}</h5>
               <div className="text-gray-500 dark:text-gray-400">
@@ -221,7 +219,6 @@ export default async function Home() {
         className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
       >
         <h2 className="font-bold text-3xl md:text-5xl mb-12">Testimonials</h2>
-
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {data.testimonials.map((t) => (
             <Card className="p-6 text-left" key={t.id}>
@@ -255,13 +252,10 @@ export default async function Home() {
         className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
       >
         <h2 className="font-bold text-3xl md:text-5xl mb-12">Blogs</h2>
-
         <div className="flex flex-col space-y-8">
           {posts.map((post) => (
             <Link key={post.slug} href={`/blogs/${post.slug}`}>
-              <h3 className="text-xl md:text-3xl font-semibold">
-                {post.title}
-              </h3>
+              <h3 className="text-xl md:text-3xl font-semibold">{post.title}</h3>
               <p className="md:text-lg font-light">{post.description}</p>
               <p className="text-sm font-medium text-gray-500 mt-2">
                 Published at: {post.publishDate}
