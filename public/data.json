@@ -35,18 +35,17 @@
     }
   },
   "personalInfo": {
-    "name": "Arif Hossain",
-    "title": "Full Stack Developer",
-    "location": "Dhaka, Bangladesh",
-    "bio": "I am a passionate full-stack developer with a strong background in building modern, scalable web applications. Lets collaborate andbring your ideas to life."
+    "name": "Laurence Mendoza",
+    "title": "Software Engineer",
+    "location": "Batangas, Philippines",
+    "bio": "Crafting web applications that make your ideas happen."
   },
   "contactInfo": {
-    "email": "devarifhossain@gmail.com",
-    "phone": "123-456-7890",
-    "linkedin": "https://www.linkedin.com/in/ariflogs/",
-    "github": "https://github.com/ariflogs",
-    "twitter": "https://twitter.com/ariflogs",
-    "website": "https://johndoe.dev"
+    "email": "renzmendoza1203@gmail.com",
+    "phone": "0998-357-1639",
+    "linkedin": "https://www.linkedin.com/in/laurence-mendoza-89a6a2188/",
+    "github": "https://github.com/tow-ie",
+    "website": "https://portfolio-cehu-git-main-tow-ies-projects.vercel.app/"
   },
   "skills": {
     "languages": ["JavaScript", "Python", "Java", "C++"],
