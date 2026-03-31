@@ -19,7 +19,7 @@ import {
   GlobeIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar } from "/components/ui/avatar";
 
 export default async function Home() {
   const data = await getJSONData();
@@ -104,7 +104,7 @@ export default async function Home() {
             <div key={exp.id} className="grid gap-1 relative">
               <div className="aspect-square w-3 bg-gray-900 rounded-full absolute left-0 translate-x-[-29.5px] z-10 top-2 dark:bg-gray-50" />
               <h4 className="text-xl font-medium">
-                {exp.role} @
+                {exp.role} 
                 <Link
                   href={exp.companyWebsite}
                   target="_blank"
