@@ -1,210 +1,121 @@
-/* eslint-disable @next/next/no-img-element */
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { getJSONData } from "@/lib/serverUtils";
-import Link from "next/link";
-import {
-  EnvelopeClosedIcon,
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-  TwitterLogoIcon,
-  GlobeIcon,
-} from "@radix-ui/react-icons";
-import { Avatar } from "@/components/ui/avatar";
-import Image from "next/image";
-
-export default async function Home() {
-  const data = await getJSONData();
-
-  return (
-    <main>
-      {/* Banner Section */}
-      <section
-        id="home"
-        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
-      >
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
-          <div className="w-1/2 mx-auto lg:w-1/3">
-            <Image
-              src={data.personalInfo.image}
-              width={280}
-              height={280}
-              alt="Developer"
-              className="mx-auto aspect-square overflow-hidden object-cover object-center rounded-full"
-            />
-          </div>
-          <div className="w-full lg:w-2/3 space-y-4">
-            <div className="space-y-2">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tighter">
-                Hey 👋, I&apos;m {data.personalInfo.name}
-              </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-400">
-                {data.personalInfo.title}
-              </h2>
-            </div>
-            <p className="max-w-[600px] lg:text-lg text-gray-500 dark:text-gray-400">
-              {data.personalInfo.bio}
-            </p>
-            <div className="space-x-4">
-              {data.contactInfo.github && (
-                <Link target="_blank" href={data.contactInfo.github} prefetch={false}>
-                  <Button variant="secondary" size="icon">
-                    <GitHubLogoIcon className="h-4 w-4" />
-                  </Button>
-                </Link>
-              )}
-              {data.contactInfo.twitter && (
-                <Link target="_blank" href={data.contactInfo.twitter} prefetch={false}>
-                  <Button variant="secondary" size="icon">
-                    <TwitterLogoIcon className="h-4 w-4" />
-                  </Button>
-                </Link>
-              )}
-              {data.contactInfo.linkedin && (
-                <Link target="_blank" href={data.contactInfo.linkedin} prefetch={false}>
-                  <Button variant="secondary" size="icon">
-                    <LinkedInLogoIcon className="h-4 w-4" />
-                  </Button>
-                </Link>
-              )}
-              <Link href={`mailto:${data.contactInfo.email}`}>
-                <Button variant="secondary" size="icon">
-                  <EnvelopeClosedIcon className="h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section
-        id="experience"
-        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
-      >
-        <h2 className="font-bold text-3xl md:text-5xl mb-12">Work Experience</h2>
-        <div className="relative pl-6 after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-gray-500/20 dark:after:bg-gray-400/20 grid gap-10">
-          {data.workExperience.map((exp) => (
-            <div key={exp.id} className="grid gap-1 relative">
-              <div className="aspect-square w-3 bg-gray-900 rounded-full absolute left-0 translate-x-[-29.5px] z-10 top-2 dark:bg-gray-50" />
-              <h4 className="text-xl font-medium">
-                {exp.role} @
-                <Link
-                  href={exp.companyWebsite}
-                  target="_blank"
-                  className="ml-2 text-primary"
-                >
-                  {exp.company}
-                </Link>
-              </h4>
-              <div className="text-gray-500 dark:text-gray-400">
-                {exp.startDate} - {exp.endDate}
-              </div>
-              <div className="mt-2">
-                <h6 className="font-medium">Key Responsibilities:</h6>
-                <ul className="text-gray-500 text-sm list-disc pl-4">
-                  {exp.keyResponsibilities.map((resp) => (
-                    <li key={resp}>{resp}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section
-        id="projects"
-        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
-      >
-        <h2 className="font-bold text-3xl md:text-5xl mb-12">My Projects</h2>
-        <div className="grid grid-cols-1 gap-4 lg:gap-6">
-          {data.projects.map((project) => (
-            <Card key={project.id} className="flex flex-col lg:flex-row">
-              <div className="w-full lg:w-1/3 p-2 flex items-center">
-                <Image
-                  src={project.cover}
-                  alt={project.title}
-                  height={200}
-                  width={300}
-                  className="rounded-md object-cover"
-                />
-              </div>
-              <div className="w-full lg:w-2/3">
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardContent>
-                <CardFooter>
-                  <div className="flex space-x-3">
-                    {project.live_url && (
-                      <Link
-                        target="_blank"
-                        href={project.live_url}
-                        prefetch={false}
-                      >
-                        <Button size="sm">
-                          <GlobeIcon className="h-3 w-3 mr-2" />
-                          Live Demo
-                        </Button>
-                      </Link>
-                    )}
-                    <Link
-                      target="_blank"
-                      href={project.code_repo_url}
-                      prefetch={false}
-                    >
-                      <Button size="sm" variant="outline">
-                        <GitHubLogoIcon className="h-3 w-3 mr-2" />
-                        Open Repository
-                      </Button>
-                    </Link>
-                  </div>
-                </CardFooter>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Education Section */}
-      <section
-        id="education"
-        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
-      >
-        <h2 className="font-bold text-3xl md:text-5xl mb-12">Education</h2>
-        <div className="relative pl-6 after:absolute after:inset-y-0 after:left-0 after:w-px after:bg-gray-500/20 dark:after:bg-gray-400/20 grid gap-10">
-          {data.education.map((ed) => (
-            <div key={ed.id} className="grid gap-1 relative">
-              <div className="aspect-square w-3 bg-gray-900 rounded-full absolute left-0 translate-x-[-29.5px] z-10 top-2 dark:bg-gray-50" />
-              <h4 className="text-xl font-medium">{ed.degree}</h4>
-              <h5 className="font-medium">{ed.institution}</h5>
-              <div className="text-gray-500 dark:text-gray-400">
-                {ed.startDate} - {ed.endDate}
-              </div>
-              <p className="mt-2 text-sm text-gray-500">{ed.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    </main>
-  );
+{
+  "visual": {
+    "navbar": {
+      "links": [
+        { "label": "Experience", "path": "#experience" },
+        { "label": "Projects", "path": "#projects" },
+        { "label": "Education", "path": "#education" }
+      ]
+    },
+    "home": {
+      "sections": {
+        "banner": true,
+        "experience": true,
+        "project": true,
+        "education": true
+      }
+    }
+  },
+  "personalInfo": {
+    "name": "Laurence Mendoza",
+    "title": "Software Engineer",
+    "location": "Batangas, Philippines",
+    "bio": "Crafting web applications that make your ideas happen.",
+    "image": "/assets/profile.jpg"
+  },
+  "contactInfo": {
+    "email": "renzmendoza1203@gmail.com",
+    "phone": "0998-357-1639",
+    "linkedin": "https://www.linkedin.com/in/laurence-mendoza-89a6a2188/",
+    "github": "https://github.com/tow-ie",
+    "twitter": "",
+    "website": "https://johndoe.dev"
+  },
+  "skills": {
+    "languages": ["JavaScript", "Python", "Java", "C++"],
+    "frameworks": ["React", "Node.js", "Express", "Django", "Spring Boot"],
+    "databases": ["MySQL", "MongoDB", "PostgreSQL"],
+    "tools": ["Git", "Docker", "Kubernetes", "Jenkins", "AWS", "GCP"]
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "Teyvat Ordering System",
+      "description": "A kiosk-style ordering system featuring all dishes inspired from Genshin Impact.",
+      "technologies": ["Typescript", "Angular.js"],
+      "live_url": "",
+      "code_repo_url": "https://teyvat-order-system.vercel.app/",
+      "cover": "/assets/projhhct_1.jpeg"
+    },
+    {
+      "id": "2",
+      "title": "Faculty Attendance and Room Management System",
+      "description": "A system to manage faculty attendance and classroom assignments efficiently at Westmead International School.",
+      "technologies": ["Java", "Javascript", "MySQL"],
+      "live_url": "",
+      "code_repo_url": "https://teyvat-order-system.vercel.app/",
+      "cover": "/assets/projhhect_2.jpeg"
+    },
+    {
+      "id": "3",
+      "title": "SecureMoto: An IoT-Based Theft Prevention System for Two-Wheel Motor Vehicles",
+      "description": "An IoT-based system designed to prevent theft of two-wheel motor vehicles by providing real-time monitoring and alert notifications to the owner.",
+      "technologies": ["C++", "Java", "Python", "PHP"],
+      "live_url": "",
+      "code_repo_url": "https://teyvat-order-system.vercel.app/",
+      "cover": "/assets/projggect_3.jpeg"
+    }
+  ],
+  "workExperience": [
+    {
+      "id": "1",
+      "company": "ResultsCx",
+      "companyWebsite": "https://careers.resultscx.com/",
+      "role": "Customer Service Representative",
+      "startDate": "Sept 2025",
+      "endDate": "Jan 2026",
+      "technologies": ["Socket.io", "Node.js", "Express", "React"],
+      "keyResponsibilities": [
+        "Answered patient inquiries via phone, email, and chat promptly and professionally.",
+        "Assisted patients in scheduling appointments and managing their healthcare accounts.",
+        "Resolved billing and insurance-related issues while ensuring patient confidentiality.",
+        "Documented patient interactions accurately in the CRM system.",
+        "Provided support and guidance on healthcare services, policies, and procedures."
+      ]
+    },
+    {
+      "id": "2",
+      "company": "United Doctors of Saint Camillus De Lellis Hospital and Medical Center",
+      "companyWebsite": "https://web.facebook.com/UDSCDLH/?_rdc=1&_rdr#",
+      "role": "Technical Support",
+      "startDate": "June 2024",
+      "endDate": "Aug 2024",
+      "technologies": ["MongoDB", "Express", "React", "Node.js"],
+      "keyResponsibilities": [
+        "Provided technical support for hospital staff, troubleshooting computers, printers, and other medical equipment.",
+        "Installed and maintained Ethernet connections, network devices, and telecommunication systems.",
+        "Diagnosed and resolved hardware and software issues to ensure uninterrupted hospital operations.",
+        "Assisted staff with dial tone, phone setups, and other communication systems.",
+        "Documented IT incidents and resolutions, and coordinated with vendors for complex technical problems."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "1",
+      "institution": "Coursera",
+      "degree": "Full Stack Web Development with React",
+      "description": "Completed a Coursera specialization that focused on building full-stack web applications using React, Node.js, Express, and MongoDB. Learned best practices for designing and implementing responsive, scalable, and secure web applications.",
+      "startDate": "Sep 2013",
+      "endDate": "May 2017"
+    },
+    {
+      "id": "2",
+      "institution": "Westmead International School",
+      "degree": "Bachelor of Science in Computer Science",
+      "description": "Completed a comprehensive curriculum in computer science, including courses in data structures, algorithms, software engineering, and artificial intelligence. Worked on several projects, including a web application for managing student organizations and a mobile app for tracking fitness activities.",
+      "startDate": "Sep 2021",
+      "endDate": "June 2025"
+    }
+  ]
 }
