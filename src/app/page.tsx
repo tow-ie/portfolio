@@ -19,7 +19,7 @@ import {
   GlobeIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
-import { Avatar } from "/components/ui/avatar";
+import { Avatar } from "@/components/ui/avatar";
 
 export default async function Home() {
   const data = await getJSONData();
@@ -54,31 +54,19 @@ export default async function Home() {
               {data.personalInfo.bio}
             </p>
             <div className="space-x-4">
-              <Link
-                target="_blank"
-                href={data.contactInfo.github}
-                prefetch={false}
-              >
+              <Link target="_blank" href={data.contactInfo.github}>
                 <Button variant="secondary" size="icon">
                   <GitHubLogoIcon className="h-4 w-4" />
                 </Button>
               </Link>
               {data.contactInfo.twitter && (
-                <Link
-                  target="_blank"
-                  href={data.contactInfo.twitter}
-                  prefetch={false}
-                >
+                <Link target="_blank" href={data.contactInfo.twitter}>
                   <Button variant="secondary" size="icon">
                     <TwitterLogoIcon className="h-4 w-4" />
                   </Button>
                 </Link>
               )}
-              <Link
-                target="_blank"
-                href={data.contactInfo.linkedin}
-                prefetch={false}
-              >
+              <Link target="_blank" href={data.contactInfo.linkedin}>
                 <Button variant="secondary" size="icon">
                   <LinkedInLogoIcon className="h-4 w-4" />
                 </Button>
@@ -164,22 +152,14 @@ export default async function Home() {
                 <CardFooter>
                   <div className="flex space-x-3">
                     {project.live_url && (
-                      <Link
-                        target="_blank"
-                        href={project.live_url}
-                        prefetch={false}
-                      >
+                      <Link target="_blank" href={project.live_url}>
                         <Button size="sm">
                           <GlobeIcon className="h-3 w-3 mr-2" />
                           Live Demo
                         </Button>
                       </Link>
                     )}
-                    <Link
-                      target="_blank"
-                      href={project.code_repo_url}
-                      prefetch={false}
-                    >
+                    <Link target="_blank" href={project.code_repo_url}>
                       <Button size="sm" variant="outline">
                         <GitHubLogoIcon className="h-3 w-3 mr-2" />
                         Open Repository
