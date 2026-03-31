@@ -18,8 +18,8 @@ import {
   TwitterLogoIcon,
   GlobeIcon,
 } from "@radix-ui/react-icons";
-import { Avatar } from "@/components/ui/avatar";
 import Image from "next/image";
+import { Avatar } from "@/components/ui/avatar";
 
 export default async function Home() {
   const data = await getJSONData();
@@ -63,15 +63,17 @@ export default async function Home() {
                   <GitHubLogoIcon className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link
-                target="_blank"
-                href={data.contactInfo.twitter}
-                prefetch={false}
-              >
-                <Button variant="secondary" size="icon">
-                  <TwitterLogoIcon className="h-4 w-4" />
-                </Button>
-              </Link>
+              {data.contactInfo.twitter && (
+                <Link
+                  target="_blank"
+                  href={data.contactInfo.twitter}
+                  prefetch={false}
+                >
+                  <Button variant="secondary" size="icon">
+                    <TwitterLogoIcon className="h-4 w-4" />
+                  </Button>
+                </Link>
+              )}
               <Link
                 target="_blank"
                 href={data.contactInfo.linkedin}
