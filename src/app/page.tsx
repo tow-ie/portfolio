@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getBlogPosts, getJSONData } from "@/lib/serverUtils";
+import { getJSONData } from "@/lib/serverUtils";
 import Link from "next/link";
 import {
   EnvelopeClosedIcon,
@@ -23,7 +23,6 @@ import Image from "next/image";
 
 export default async function Home() {
   const data = await getJSONData();
-  const posts = await getBlogPosts();
 
   return (
     <main>
@@ -209,58 +208,6 @@ export default async function Home() {
               </div>
               <p className="mt-2 text-sm text-gray-500">{ed.description}</p>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section
-        id="testimonials"
-        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
-      >
-        <h2 className="font-bold text-3xl md:text-5xl mb-12">Testimonials</h2>
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {data.testimonials.map((t) => (
-            <Card className="p-6 text-left" key={t.id}>
-              <blockquote className="font-medium lg:text-og">
-                &ldquo;{t.feedback}.&rdquo;
-              </blockquote>
-              <div className="mt-4 flex items-center gap-3">
-                <Avatar>
-                  <Image
-                    height={50}
-                    width={50}
-                    alt="testimonial avatar"
-                    src={t.avatar}
-                  />
-                </Avatar>
-                <div>
-                  <div className="font-semibold">{t.name}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">
-                    {t.title} @ {t.company}
-                  </div>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Blogs Section */}
-      <section
-        id="blogs"
-        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
-      >
-        <h2 className="font-bold text-3xl md:text-5xl mb-12">Blogs</h2>
-        <div className="flex flex-col space-y-8">
-          {posts.map((post) => (
-            <Link key={post.slug} href={`/blogs/${post.slug}`}>
-              <h3 className="text-xl md:text-3xl font-semibold">{post.title}</h3>
-              <p className="md:text-lg font-light">{post.description}</p>
-              <p className="text-sm font-medium text-gray-500 mt-2">
-                Published at: {post.publishDate}
-              </p>
-            </Link>
           ))}
         </div>
       </section>
