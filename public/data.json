@@ -2,11 +2,26 @@
   "visual": {
     "navbar": {
       "links": [
-        { "label": "Experience", "path": "#experience" },
-        { "label": "Projects", "path": "#projects" },
-        { "label": "Education", "path": "#education" },
-        { "label": "Testimonials", "path": "#testimonials" },
-        { "label": "Blogs", "path": "#blogs" }
+        {
+          "label": "Experience",
+          "path": "#experience"
+        },
+        {
+          "label": "Projects",
+          "path": "#projects"
+        },
+        {
+          "label": "Education",
+          "path": "#education"
+        },
+        {
+          "label": "Testimonials",
+          "path": "#testimonials"
+        },
+        {
+          "label": "Blogs",
+          "path": "#blogs"
+        }
       ]
     },
     "home": {
@@ -20,17 +35,17 @@
     }
   },
   "personalInfo": {
-    "name": "Laurence Mendoza",
-    "title": "Software Engineer",
-    "location": "Batangas, Philippines",
-    "bio": "Crafting web applications that make your ideas happen.",
-    "image": "/assets/profile.jpg"
+    "name": "Arif Hossain",
+    "title": "Full Stack Developer",
+    "location": "Dhaka, Bangladesh",
+    "bio": "I am a passionate full-stack developer with a strong background in building modern, scalable web applications. Lets collaborate andbring your ideas to life."
   },
   "contactInfo": {
-    "email": "renzmendoza1203@gmail.com",
-    "phone": "0998-357-1639",
-    "linkedin": "https://www.linkedin.com/in/laurence-mendoza-89a6a2188/",
-    "github": "https://github.com/tow-ie",
+    "email": "devarifhossain@gmail.com",
+    "phone": "123-456-7890",
+    "linkedin": "https://www.linkedin.com/in/ariflogs/",
+    "github": "https://github.com/ariflogs",
+    "twitter": "https://twitter.com/ariflogs",
     "website": "https://johndoe.dev"
   },
   "skills": {
@@ -42,71 +57,82 @@
   "projects": [
     {
       "id": "1",
-      "title": "Teyvat Ordering System",
-      "description": "A kiosk-style ordering system featuring all dishes inspired from Genshin Impact.",
-      "technologies": ["Typescript", "Angular.js"],
-      "code_repo_url": "https://teyvat-order-system.vercel.app/",
-      "cover": "/assets/projhhct_1.jpeg"
+      "title": "Makers Tracker",
+      "description": "A project goal tracking tool for professionals. It let's you create project, assign goals and generate analytics to track progress",
+      "technologies": ["Typescript", "Next.js", "TailwindCSS", "MySQL"],
+      "live_url": "https://makerstracker.com",
+      "code_repo_url": "https://makerstracker.com",
+      "cover": "/assets/project_1.jpeg"
     },
     {
       "id": "2",
-      "title": "Faculty Attendance and Room Management System",
-      "description": "A system to manage faculty attendance and classroom assignments efficiently at Westmead International School.",
-      "technologies": ["Java", "Javascript", "MySQL"],
-      "code_repo_url": "https://teyvat-order-system.vercel.app/",
-      "cover": "/assets/projhhect_2.jpeg"
+      "title": "Pricing Bees",
+      "description": "A no-code pricing page builder. Build professional-looking pricing pages, customize looks, and get detailed analytics to optimize your pricing strategy.",
+      "technologies": ["Typescript", "Next.js", "Shadcn/ui", "Convex"],
+      "live_url": "https://pricingbees.com",
+      "code_repo_url": "https://pricingbees.com",
+      "cover": "/assets/project_2.jpeg"
     },
     {
       "id": "3",
-      "title": "SecureMoto: An IoT-Based Theft Prevention System for Two-Wheel Motor Vehicles",
-      "description": "An IoT-based system designed to prevent theft of two-wheel motor vehicles by providing real-time monitoring and alert notifications to the owner.",
-      "technologies": ["C++", "Java", "Python", "PHP"],
-      "code_repo_url": "https://teyvat-order-system.vercel.app/",
-      "cover": "/assets/projggect_3.jpeg"
+      "title": "Indie Hustles",
+      "description": "A listing site for Indie hackers to promote their products",
+      "technologies": ["Typescript", "Next.js", "TailwindCSS", "Airtable"],
+      "live_url": "https://indiehustles.com",
+      "code_repo_url": "https://indiehustles.com",
+      "cover": "/assets/project_3.jpeg"
     }
   ],
   "workExperience": [
     {
       "id": "1",
-      "company": "ResultsCx",
-      "companyWebsite": "https://careers.resultscx.com/",
-      "role": "Customer Service Representative",
-      "startDate": "Sept 2025",
-      "endDate": "Jan 2026",
+      "company": "Tech Corp",
+      "companyWebsite": "https://example.com",
+      "role": "Senior Full Stack Developer",
+      "startDate": "Jan 2020",
+      "endDate": "Present",
       "technologies": ["Socket.io", "Node.js", "Express", "React"],
       "keyResponsibilities": [
-        "Answered patient inquiries via phone, email, and chat promptly and professionally.",
-        "Assisted patients in scheduling appointments and managing their healthcare accounts.",
-        "Resolved billing and insurance-related issues while ensuring patient confidentiality.",
-        "Documented patient interactions accurately in the CRM system.",
-        "Provided support and guidance on healthcare services, policies, and procedures."
+        "Led a team of developers to create scalable web applications.",
+        "Implemented RESTful and GraphQL APIs using Node.js and Express.",
+        "Developed front-end applications using React and Next.js.",
+        "Integrated third-party services and APIs to enhance application functionality.",
+        "Mentored junior developers and conducted code reviews."
       ]
     },
     {
       "id": "2",
-      "company": "United Doctors of Saint Camillus De Lellis Hospital and Medical Center",
-      "companyWebsite": "https://web.facebook.com/UDSCDLH/?_rdc=1&_rdr#",
-      "role": "Technical Support",
-      "startDate": "June 2024",
-      "endDate": "Aug 2024",
+      "company": "Web Solutions",
+      "companyWebsite": "https://example.com",
+      "role": "Full Stack Developer",
+      "startDate": "Jun 2017",
+      "endDate": "Dec 2019",
       "technologies": ["MongoDB", "Express", "React", "Node.js"],
       "keyResponsibilities": [
-        "Provided technical support for hospital staff, troubleshooting computers, printers, and other medical equipment.",
-        "Installed and maintained Ethernet connections, network devices, and telecommunication systems.",
-        "Diagnosed and resolved hardware and software issues to ensure uninterrupted hospital operations.",
-        "Assisted staff with dial tone, phone setups, and other communication systems.",
-        "Documented IT incidents and resolutions, and coordinated with vendors for complex technical problems."
+        "Designed and developed web applications using JavaScript and React.",
+        "Built and maintained server-side APIs with Node.js and Express.",
+        "Collaborated with cross-functional teams to deliver high-quality products.",
+        "Ensured applications are responsive and performant.",
+        "Participated in Agile ceremonies and contributed to project planning."
       ]
     }
   ],
   "education": [
     {
+      "id": "1",
+      "institution": "Coursera",
+      "degree": "Full Stack Web Development with React",
+      "description": "Completed a Coursera specialization that focused on building full-stack web applications using React, Node.js, Express, and MongoDB. Learned best practices for designing and implementing responsive, scalable, and secure web applications.",
+      "startDate": "Sep 2013",
+      "endDate": "May 2017"
+    },
+    {
       "id": "2",
-      "institution": "Westmead International School",
+      "institution": "University of California, Berkeley",
       "degree": "Bachelor of Science in Computer Science",
       "description": "Completed a comprehensive curriculum in computer science, including courses in data structures, algorithms, software engineering, and artificial intelligence. Worked on several projects, including a web application for managing student organizations and a mobile app for tracking fitness activities.",
-      "startDate": "Sep 2021",
-      "endDate": "June 2025"
+      "startDate": "Sep 2013",
+      "endDate": "May 2017"
     }
   ],
   "testimonials": [
@@ -116,7 +142,7 @@
       "avatar": "/assets/testimonial_1_avatar.jpg",
       "title": "Project Manager",
       "company": "Tech Solutions Inc.",
-      "feedback": "Laurence is a fantastic developer who consistently delivers high-quality work. His ability to solve complex problems is impressive."
+      "feedback": "John is a fantastic developer who consistently delivers high-quality work. His ability to solve complex problems is impressive."
     },
     {
       "id": "2",
@@ -124,7 +150,7 @@
       "avatar": "/assets/testimonial_2_avatar.jpg",
       "title": "CEO",
       "company": "Web Innovators LLC",
-      "feedback": "Laurence is a highly skilled developer who brings a lot of value to our projects. His expertise in full stack development is top-notch."
+      "feedback": "John is a highly skilled developer who brings a lot of value to our projects. His expertise in full stack development is top-notch."
     }
   ]
 }
