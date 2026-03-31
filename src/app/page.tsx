@@ -41,24 +41,32 @@ export default async function Home() {
               className="mx-auto aspect-square overflow-hidden object-cover object-center rounded-full"
             />
           </div>
+
           <div className="w-full lg:w-2/3 space-y-4">
             <div className="space-y-2">
+              {/* ✅ UPDATED GREETING */}
               <h1 className="text-4xl md:text-5xl font-bold tracking-tighter">
-                Hey 👋, I&apos;m {data.personalInfo.name}
+                Hey 👋,
+                <br />
+                {data.personalInfo.name}
               </h1>
+
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-400">
                 {data.personalInfo.title}
               </h2>
             </div>
+
             <p className="max-w-[600px] lg:text-lg text-gray-500 dark:text-gray-400">
               {data.personalInfo.bio}
             </p>
+
             <div className="space-x-4">
               <Link target="_blank" href={data.contactInfo.github}>
                 <Button variant="secondary" size="icon">
                   <GitHubLogoIcon className="h-4 w-4" />
                 </Button>
               </Link>
+
               {data.contactInfo.twitter && (
                 <Link target="_blank" href={data.contactInfo.twitter}>
                   <Button variant="secondary" size="icon">
@@ -66,11 +74,13 @@ export default async function Home() {
                   </Button>
                 </Link>
               )}
+
               <Link target="_blank" href={data.contactInfo.linkedin}>
                 <Button variant="secondary" size="icon">
                   <LinkedInLogoIcon className="h-4 w-4" />
                 </Button>
               </Link>
+
               <Link href={`mailto:${data.contactInfo.email}`}>
                 <Button variant="secondary" size="icon">
                   <EnvelopeClosedIcon className="h-4 w-4" />
@@ -146,9 +156,11 @@ export default async function Home() {
                     ))}
                   </div>
                 </CardHeader>
+
                 <CardContent>
                   <CardDescription>{project.description}</CardDescription>
                 </CardContent>
+
                 <CardFooter>
                   <div className="flex space-x-3">
                     {project.live_url && (
@@ -159,6 +171,7 @@ export default async function Home() {
                         </Button>
                       </Link>
                     )}
+
                     <Link target="_blank" href={project.code_repo_url}>
                       <Button size="sm" variant="outline">
                         <GitHubLogoIcon className="h-3 w-3 mr-2" />
