@@ -102,14 +102,6 @@
   ],
   "education": [
     {
-      "id": "1",
-      "institution": "Coursera",
-      "degree": "Full Stack Web Development with React",
-      "description": "Completed a Coursera specialization that focused on building full-stack web applications using React, Node.js, Express, and MongoDB. Learned best practices for designing and implementing responsive, scalable, and secure web applications.",
-      "startDate": "Sep 2013",
-      "endDate": "May 2017"
-    },
-    {
       "id": "2",
       "institution": "Westmead International School",
       "degree": "Bachelor of Science in Computer Science",
