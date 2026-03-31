@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getJSONData } from "@/lib/serverUtils";
+import { getBlogPosts, getJSONData } from "@/lib/serverUtils";
 import Link from "next/link";
 import {
   EnvelopeClosedIcon,
@@ -18,10 +18,12 @@ import {
   TwitterLogoIcon,
   GlobeIcon,
 } from "@radix-ui/react-icons";
+import { Avatar } from "@/components/ui/avatar";
 import Image from "next/image";
 
 export default async function Home() {
   const data = await getJSONData();
+  const posts = await getBlogPosts();
 
   return (
     <main>
@@ -33,7 +35,7 @@ export default async function Home() {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
           <div className="w-1/2 mx-auto lg:w-1/3">
             <Image
-              src={data.personalInfo.image}
+              src="/assets/profile.jpg"
               width={280}
               height={280}
               alt="Developer"
@@ -53,39 +55,33 @@ export default async function Home() {
               {data.personalInfo.bio}
             </p>
             <div className="space-x-4">
-              {data.contactInfo.github && (
-                <Link
-                  target="_blank"
-                  href={data.contactInfo.github}
-                  prefetch={false}
-                >
-                  <Button variant="secondary" size="icon">
-                    <GitHubLogoIcon className="h-4 w-4" />
-                  </Button>
-                </Link>
-              )}
-              {data.contactInfo.twitter && (
-                <Link
-                  target="_blank"
-                  href={data.contactInfo.twitter}
-                  prefetch={false}
-                >
-                  <Button variant="secondary" size="icon">
-                    <TwitterLogoIcon className="h-4 w-4" />
-                  </Button>
-                </Link>
-              )}
-              {data.contactInfo.linkedin && (
-                <Link
-                  target="_blank"
-                  href={data.contactInfo.linkedin}
-                  prefetch={false}
-                >
-                  <Button variant="secondary" size="icon">
-                    <LinkedInLogoIcon className="h-4 w-4" />
-                  </Button>
-                </Link>
-              )}
+              <Link
+                target="_blank"
+                href={data.contactInfo.github}
+                prefetch={false}
+              >
+                <Button variant="secondary" size="icon">
+                  <GitHubLogoIcon className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link
+                target="_blank"
+                href={data.contactInfo.twitter}
+                prefetch={false}
+              >
+                <Button variant="secondary" size="icon">
+                  <TwitterLogoIcon className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link
+                target="_blank"
+                href={data.contactInfo.linkedin}
+                prefetch={false}
+              >
+                <Button variant="secondary" size="icon">
+                  <LinkedInLogoIcon className="h-4 w-4" />
+                </Button>
+              </Link>
               <Link href={`mailto:${data.contactInfo.email}`}>
                 <Button variant="secondary" size="icon">
                   <EnvelopeClosedIcon className="h-4 w-4" />
@@ -140,7 +136,7 @@ export default async function Home() {
         <h2 className="font-bold text-3xl md:text-5xl mb-12">My Projects</h2>
         <div className="grid grid-cols-1 gap-4 lg:gap-6">
           {data.projects.map((project) => (
-            <Card key={project.id} className="flex flex-col lg:flex-row">
+            <Card key={project.title} className="flex flex-col lg:flex-row">
               <div className="w-full lg:w-1/3 p-2 flex items-center">
                 <Image
                   src={project.cover}
@@ -213,6 +209,58 @@ export default async function Home() {
               </div>
               <p className="mt-2 text-sm text-gray-500">{ed.description}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section
+        id="testimonials"
+        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
+      >
+        <h2 className="font-bold text-3xl md:text-5xl mb-12">Testimonials</h2>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {data.testimonials.map((t) => (
+            <Card className="p-6 text-left" key={t.id}>
+              <blockquote className="font-medium lg:text-og">
+                &ldquo;{t.feedback}.&rdquo;
+              </blockquote>
+              <div className="mt-4 flex items-center gap-3">
+                <Avatar>
+                  <Image
+                    height={50}
+                    width={50}
+                    alt="testimonial avatar"
+                    src={t.avatar}
+                  />
+                </Avatar>
+                <div>
+                  <div className="font-semibold">{t.name}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    {t.title} @ {t.company}
+                  </div>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Blogs Section */}
+      <section
+        id="blogs"
+        className="container max-w-5xl mx-auto py-12 md:py-16 lg:py-20"
+      >
+        <h2 className="font-bold text-3xl md:text-5xl mb-12">Blogs</h2>
+        <div className="flex flex-col space-y-8">
+          {posts.map((post) => (
+            <Link key={post.slug} href={`/blogs/${post.slug}`}>
+              <h3 className="text-xl md:text-3xl font-semibold">{post.title}</h3>
+              <p className="md:text-lg font-light">{post.description}</p>
+              <p className="text-sm font-medium text-gray-500 mt-2">
+                Published at: {post.publishDate}
+              </p>
+            </Link>
           ))}
         </div>
       </section>
