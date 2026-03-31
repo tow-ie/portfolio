@@ -28,7 +28,7 @@
     "phone": "0998-357-1639",
     "linkedin": "https://www.linkedin.com/in/laurence-mendoza-89a6a2188/",
     "github": "https://github.com/tow-ie",
-    "twitter": "",
+    "twitter": "", 
     "website": "https://johndoe.dev"
   },
   "skills": {
@@ -116,6 +116,24 @@
       "description": "Completed a comprehensive curriculum in computer science, including courses in data structures, algorithms, software engineering, and artificial intelligence. Worked on several projects, including a web application for managing student organizations and a mobile app for tracking fitness activities.",
       "startDate": "Sep 2021",
       "endDate": "June 2025"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Jane Smith",
+      "avatar": "/assets/testimonial_1_avatar.jpg",
+      "title": "Project Manager",
+      "company": "Tech Solutions Inc.",
+      "feedback": "John is a fantastic developer who consistently delivers high-quality work. His ability to solve complex problems is impressive."
+    },
+    {
+      "id": "2",
+      "name": "Mike Johnson",
+      "avatar": "/assets/testimonial_2_avatar.jpg",
+      "title": "CEO",
+      "company": "Web Innovators LLC",
+      "feedback": "John is a highly skilled developer who brings a lot of value to our projects. His expertise in full stack development is top-notch."
     }
   ]
 }
