@@ -4,7 +4,9 @@
       "links": [
         { "label": "Experience", "path": "#experience" },
         { "label": "Projects", "path": "#projects" },
-        { "label": "Education", "path": "#education" }
+        { "label": "Education", "path": "#education" },
+        { "label": "Testimonials", "path": "#testimonials" },
+        { "label": "Blogs", "path": "#blogs" }
       ]
     },
     "home": {
@@ -17,13 +19,13 @@
       }
     }
   },
-"personalInfo": {
-  "name": "Laurence Mendoza",
-  "title": "Software Engineer",
-  "location": "Batangas, Philippines",
-  "bio": "Crafting web applications that make your ideas happen.",
-  "image": "/assets/profile.jpg"
-},
+  "personalInfo": {
+    "name": "Laurence Mendoza",
+    "title": "Software Engineer",
+    "location": "Batangas, Philippines",
+    "bio": "Crafting web applications that make your ideas happen.",
+    "image": "/assets/profile.jpg"
+  },
   "contactInfo": {
     "email": "renzmendoza1203@gmail.com",
     "phone": "0998-357-1639",
@@ -73,11 +75,11 @@
       "endDate": "Jan 2026",
       "technologies": ["Socket.io", "Node.js", "Express", "React"],
       "keyResponsibilities": [
-    "Answered patient inquiries via phone, email, and chat promptly and professionally.",
-    "Assisted patients in scheduling appointments and managing their healthcare accounts.",
-    "Resolved billing and insurance-related issues while ensuring patient confidentiality.",
-    "Documented patient interactions accurately in the CRM system.",
-    "Provided support and guidance on healthcare services, policies, and procedures."
+        "Answered patient inquiries via phone, email, and chat promptly and professionally.",
+        "Assisted patients in scheduling appointments and managing their healthcare accounts.",
+        "Resolved billing and insurance-related issues while ensuring patient confidentiality.",
+        "Documented patient interactions accurately in the CRM system.",
+        "Provided support and guidance on healthcare services, policies, and procedures."
       ]
     },
     {
@@ -89,12 +91,12 @@
       "endDate": "Aug 2024",
       "technologies": ["MongoDB", "Express", "React", "Node.js"],
       "keyResponsibilities": [
-    "Provided technical support for hospital staff, troubleshooting computers, printers, and other medical equipment.",
-    "Installed and maintained Ethernet connections, network devices, and telecommunication systems.",
-    "Diagnosed and resolved hardware and software issues to ensure uninterrupted hospital operations.",
-    "Assisted staff with dial tone, phone setups, and other communication systems.",
-    "Documented IT incidents and resolutions, and coordinated with vendors for complex technical problems."
-]
+        "Provided technical support for hospital staff, troubleshooting computers, printers, and other medical equipment.",
+        "Installed and maintained Ethernet connections, network devices, and telecommunication systems.",
+        "Diagnosed and resolved hardware and software issues to ensure uninterrupted hospital operations.",
+        "Assisted staff with dial tone, phone setups, and other communication systems.",
+        "Documented IT incidents and resolutions, and coordinated with vendors for complex technical problems."
+      ]
     }
   ],
   "education": [
@@ -102,9 +104,27 @@
       "id": "2",
       "institution": "Westmead International School",
       "degree": "Bachelor of Science in Computer Science",
-      "description": "Completed a comprehensive curriculum in computer science, including courses in data structures, algorithms, software engineering, and artificial intelligence. Worked on several projects, including a web application for managing student organizations.",
+      "description": "Completed a comprehensive curriculum in computer science, including courses in data structures, algorithms, software engineering, and artificial intelligence. Worked on several projects, including a web application for managing student organizations and a mobile app for tracking fitness activities.",
       "startDate": "Sep 2021",
       "endDate": "June 2025"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Jane Smith",
+      "avatar": "/assets/testimonial_1_avatar.jpg",
+      "title": "Project Manager",
+      "company": "Tech Solutions Inc.",
+      "feedback": "Laurence is a fantastic developer who consistently delivers high-quality work. His ability to solve complex problems is impressive."
+    },
+    {
+      "id": "2",
+      "name": "Mike Johnson",
+      "avatar": "/assets/testimonial_2_avatar.jpg",
+      "title": "CEO",
+      "company": "Web Innovators LLC",
+      "feedback": "Laurence is a highly skilled developer who brings a lot of value to our projects. His expertise in full stack development is top-notch."
     }
   ]
 }
