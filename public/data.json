@@ -60,6 +60,7 @@
       "title": "Teyvat Ordering System",
       "description": "A kiosk-style ordering system featuring all dishes inspired from Genshin Impact.",
       "technologies": ["Typescript", "Angular.js"],
+      "live_url": "https://makerstracker.com",
       "code_repo_url": "https://teyvat-order-system.vercel.app/",
       "cover": "/assets/project_1.jpeg"
     },
