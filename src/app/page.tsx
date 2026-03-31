@@ -48,7 +48,7 @@ export default async function Home() {
               <h1 className="text-4xl md:text-5xl font-bold tracking-tighter">
                 Hey 👋,
                 <br />
-                {data.personalInfo.name}
+                I&apos;m {data.personalInfo.name}
               </h1>
 
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-400">
