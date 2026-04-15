@@ -48,14 +48,14 @@
   "cover": "/assets/galawna.jpeg"
 },
     {
-      "id": "2",
-      "title": "Faculty Attendance and Room Management System",
-      "description": "A system to manage faculty attendance and classroom assignments efficiently at Westmead International School.",
-      "technologies": ["Java", "Javascript", "MySQL"],
-      "live_url": "",
-      "code_repo_url": "https://teyvat-order-system.vercel.app/",
-      "cover": "/assets/project2.jpeg"
-    },
+  "id": "2",
+  "title": "Teyvat Ordering System",
+  "description": "A simple Genshin-themed ordering menu built as a web project.",
+  "technologies": ["HTML", "CSS", "JavaScript"],
+  "live_url": "https://teyvat-order-system.vercel.app/",
+  "code_repo_url": "https://github.com/tow-ie/teyvat-order-system",
+  "cover": "/assets/teyvat.jpeg"
+},
     {
       "id": "3",
       "title": "SecureMoto: An IoT-Based Theft Prevention System for Two-Wheel Motor Vehicles",
