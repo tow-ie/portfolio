@@ -45,7 +45,7 @@
       "technologies": ["Typescript", "Angular.js"],
       "live_url": "",
       "code_repo_url": "https://teyvat-order-system.vercel.app/",
-      "cover": "/assets/projhhct_1.jpeg"
+      "cover": "/assets/project1.jpeg"
     },
     {
       "id": "2",
@@ -54,7 +54,7 @@
       "technologies": ["Java", "Javascript", "MySQL"],
       "live_url": "",
       "code_repo_url": "https://teyvat-order-system.vercel.app/",
-      "cover": "/assets/projhhect_2.jpeg"
+      "cover": "/assets/project2.jpeg"
     },
     {
       "id": "3",
@@ -63,7 +63,7 @@
       "technologies": ["C++", "Java", "Python", "PHP"],
       "live_url": "",
       "code_repo_url": "https://teyvat-order-system.vercel.app/",
-      "cover": "/assets/projggect_3.jpeg"
+      "cover": "/assets/project3.jpeg"
     }
   ],
   "workExperience": [
