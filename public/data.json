@@ -61,8 +61,8 @@
       "title": "SecureMoto: An IoT-Based Theft Prevention System for Two-Wheel Motor Vehicles",
       "description": "An IoT-based system designed to prevent theft of two-wheel motor vehicles by providing real-time monitoring and alert notifications to the owner.",
       "technologies": ["C++", "Java", "Python", "PHP"],
-      "live_url": "",
-      "code_repo_url": "https://teyvat-order-system.vercel.app/",
+     "live_url": "",
+     "code_repo_url": ""
       "cover": "/assets/securemoto.jpeg"
     }
   ],
