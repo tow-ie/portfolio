@@ -38,15 +38,15 @@
     "tools": ["Git", "Docker", "Kubernetes", "Jenkins", "AWS", "GCP"]
   },
   "projects": [
-    {
-      "id": "1",
-      "title": "Teyvat Ordering System",
-      "description": "A kiosk-style ordering system featuring all dishes inspired from Genshin Impact.",
-      "technologies": ["Typescript", "Angular.js"],
-      "live_url": "",
-      "code_repo_url": "https://teyvat-order-system.vercel.app/",
-      "cover": "/assets/project1.jpeg"
-    },
+   {
+  "id": "1",
+  "title": "GalawNa",
+  "description": "A React and Vite anti-procrastination web app with task tracking and user flow features, built with Supabase integration and client-side routing.",
+  "technologies": ["React", "Vite", "Supabase", "React Router"],
+  "live_url": "",
+  "code_repo_url": "https://github.com/tow-ie/GalawNa",
+  "cover": "/assets/galawna-cover.jpg"
+}
     {
       "id": "2",
       "title": "Faculty Attendance and Room Management System",
